@@ -1,4 +1,4 @@
-# 🤝 Kodeks postępowania
+# Kodeks postępowania
 
 Chcemy, żeby udział w projektach Huge Commits Only był przyjemny dla każdego, niezależnie od doświadczenia, pochodzenia, płci, tożsamości, wyglądu, wieku czy poglądów.
 

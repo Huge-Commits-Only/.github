@@ -1,4 +1,4 @@
-# 🛡️ Polityka bezpieczeństwa
+# Polityka bezpieczeństwa
 
 ## Zgłaszanie podatności
 
