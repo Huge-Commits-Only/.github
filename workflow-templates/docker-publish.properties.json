@@ -1,6 +1,6 @@
 {
   "name": "Docker Image Publish",
-  "description": "Obraz multi-arch (amd64 + arm64 dla Raspberry Pi) publikowany w GHCR po merge'u na main.",
+  "description": "Obraz multi-arch (amd64 + arm64 dla Raspberry Pi) w GHCR po merge'u na main, z podpisaną atestacją pochodzenia i SBOM.",
   "categories": ["Dockerfile"],
   "filePatterns": ["Dockerfile$"]
 }

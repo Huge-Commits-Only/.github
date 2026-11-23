@@ -21,6 +21,8 @@ Jeden pomysł, jeden porządny PR, jeden squash na `main`. Bez połowicznych com
 | :--- | :--- | :--- |
 | 💞 [**duet**](https://github.com/Huge-Commits-Only/duet) | Gry i quizy dla par: projektor pokazuje grę, telefony są pilotami (wejście przez QR) | Go · HTML/CSS/JS · Docker `scratch` |
 
+**Nowy projekt?** Zacznij od [**go-app-template**](https://github.com/Huge-Commits-Only/go-app-template) → *Use this template*: Go, Docker i komplet CI od pierwszego commita.
+
 <br>
 
 ## 🧭 Jak tu pracujemy
@@ -29,7 +31,7 @@ Jeden pomysł, jeden porządny PR, jeden squash na `main`. Bez połowicznych com
 - **Huge commits only** — każda zmiana to jeden PR, scalany jako jeden squash commit.
 - **Self-hosted** — wszystko działa w homelabie na Raspberry Pi (arm64), bez chmury i kont.
 - **Lekko** — minimum zależności, małe obrazy, kilkanaście MB RAM.
-- **Bezpiecznie** — testy, lint, govulncheck, Trivy i Dependabot w CI; akcje przypięte do SHA.
+- **Bezpiecznie** — testy, lint, govulncheck, CodeQL, Trivy, fuzzing i Dependabot w CI; akcje i obrazy przypięte do skrótów, obrazy z podpisaną atestacją pochodzenia, wynik [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Huge-Commits-Only/duet).
 
 <br>
 
