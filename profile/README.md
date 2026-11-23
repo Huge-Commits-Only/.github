@@ -14,7 +14,7 @@
 
 <table>
 <tr>
-<td width="55%"><a href="https://github.com/Huge-Commits-Only/duet"><img src="assets/duet.png" alt="Duet: projektor i telefon w trakcie gry"></a></td>
+<td width="55%"><a href="https://github.com/Huge-Commits-Only/duet"><img src="assets/duet.gif" alt="Duet: runda „Co wolisz” na projektorze i telefonie"></a></td>
 <td width="45%" valign="top">
 <h3>💞 <a href="https://github.com/Huge-Commits-Only/duet">duet</a></h3>
 Gry i quizy dla par. Projektor pokazuje grę, telefony są pilotami — wejście przez kod QR, bez aplikacji i kont.
@@ -26,7 +26,7 @@ Gry i quizy dla par. Projektor pokazuje grę, telefony są pilotami — wejście
 </td>
 </tr>
 <tr>
-<td width="55%"><a href="https://github.com/Huge-Commits-Only/go-app-template"><img src="assets/go-app-template.png" alt="go-app-template: kroki CI od PR do podpisanego obrazu"></a></td>
+<td width="55%"><a href="https://github.com/Huge-Commits-Only/go-app-template"><img src="assets/go-app-template.gif" alt="go-app-template: kroki CI od PR do podpisanego obrazu"></a></td>
 <td width="45%" valign="top">
 <h3>🧨 <a href="https://github.com/Huge-Commits-Only/go-app-template">go-app-template</a></h3>
 Nowy projekt w minutę. <b>Use this template</b> i masz aplikację w Go z testami, obrazem dla Raspberry Pi i kompletem CI — na zielono od pierwszego commita.
@@ -55,21 +55,11 @@ Nowy projekt w minutę. <b>Use this template</b> i masz aplikację w Go z testam
 <br>
 
 ## 🛡️ Bezpieczeństwo
-
-```mermaid
-flowchart LR
-    A["🔀 PR"] --> B["🧪 Testy, fuzzing,<br/>E2E w przeglądarce"]
-    B --> C["🔎 CodeQL · govulncheck<br/>Trivy · gosec"]
-    C --> D["🧨 Podpisany squash<br/>na chronionym main"]
-    D --> E["🔏 Obraz z atestacją<br/>SLSA i SBOM"]
-    E --> F["📊 OpenSSF Scorecard<br/>co tydzień"]
-```
-
-- Akcje GitHub tylko z listy dozwolonych i przypięte do pełnego SHA, obrazy bazowe przypięte do skrótu.
-- Secret scanning z blokadą pushy, Dependabot, prywatne zgłaszanie podatności w każdym repozytorium.
-- Znalazłeś podatność? Nie zakładaj publicznego issue — zgłoś ją prywatnie przez **Security → Report a vulnerability**. Szczegóły w [SECURITY.md](https://github.com/Huge-Commits-Only/.github/blob/main/SECURITY.md).
-
-<br>
+- 🧪 Testy, fuzzing i testy w prawdziwej przeglądarce przy każdym PR.
+- 🔎 CodeQL, govulncheck, gosec i Trivy; nowy poważny alert blokuje merge.
+- 📌 Akcje GitHub tylko z listy dozwolonych i przypięte do SHA, obrazy bazowe przypięte do skrótu.
+- 🔏 Obrazy z podpisaną atestacją pochodzenia (SLSA) i SBOM; wynik [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Huge-Commits-Only/duet) co tydzień.
+- 🤐 Secret scanning z blokadą pushy, Dependabot, prywatne zgłaszanie podatności. Znalazłeś podatność? Nie zakładaj issue — **Security → Report a vulnerability** ([SECURITY.md](https://github.com/Huge-Commits-Only/.github/blob/main/SECURITY.md)).
 
 <div align="center">
 <img src="assets/logo.svg" alt="" width="56">
