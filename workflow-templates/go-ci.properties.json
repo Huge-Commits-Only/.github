@@ -1,0 +1,6 @@
+{
+  "name": "Go Verification",
+  "description": "Moduły, formatowanie, kompilacja, testy z -race i golangci-lint. Akcje przypięte do SHA.",
+  "categories": ["Go"],
+  "filePatterns": ["go.mod$"]
+}
