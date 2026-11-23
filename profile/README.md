@@ -1,15 +1,10 @@
 <div align="center">
 
-# 🧨 Huge Commits Only
+<img src="assets/banner.png" alt="Huge Commits Only — aplikacje budowane z AI" width="100%">
 
-**Aplikacje budowane z AI — od pomysłu do działającego wdrożenia.**
+<br><br>
 
-Jeden pomysł, jeden porządny PR, jeden squash na `main`. Bez połowicznych commitów.
-
-[![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)](https://go.dev/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-c51a4a?style=flat-square&logo=raspberrypi&logoColor=white)](https://www.raspberrypi.com/)
-[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+<img src="https://skillicons.dev/icons?i=go,docker,raspberrypi,githubactions,js,svelte,sqlite,linux&theme=dark" alt="Go, Docker, Raspberry Pi, GitHub Actions, JavaScript, Svelte, SQLite, Linux">
 
 </div>
 
@@ -17,25 +12,67 @@ Jeden pomysł, jeden porządny PR, jeden squash na `main`. Bez połowicznych com
 
 ## 🚀 Projekty
 
-| Projekt | Co robi | Stos |
-| :--- | :--- | :--- |
-| 💞 [**duet**](https://github.com/Huge-Commits-Only/duet) | Gry i quizy dla par: projektor pokazuje grę, telefony są pilotami (wejście przez QR) | Go · HTML/CSS/JS · Docker `scratch` |
-
-**Nowy projekt?** Zacznij od [**go-app-template**](https://github.com/Huge-Commits-Only/go-app-template) → *Use this template*: Go, Docker i komplet CI od pierwszego commita.
+<table>
+<tr>
+<td width="55%"><a href="https://github.com/Huge-Commits-Only/duet"><img src="assets/duet.png" alt="Duet: projektor i telefon w trakcie gry"></a></td>
+<td width="45%" valign="top">
+<h3>💞 <a href="https://github.com/Huge-Commits-Only/duet">duet</a></h3>
+Gry i quizy dla par. Projektor pokazuje grę, telefony są pilotami — wejście przez kod QR, bez aplikacji i kont.
+<br><br>
+🎮 13 trybów · 👥 do 4 par · 🏠 bez chmury<br>
+🎯 Go · 🐳 obraz <code>scratch</code> · ⚡ ok. 25 MB RAM
+<br><br>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Huge-Commits-Only/duet"><img src="https://img.shields.io/ossf-scorecard/github.com/Huge-Commits-Only/duet?style=flat-square&label=OpenSSF%20Scorecard" alt="OpenSSF Scorecard"></a>
+</td>
+</tr>
+<tr>
+<td width="55%"><a href="https://github.com/Huge-Commits-Only/go-app-template"><img src="assets/go-app-template.png" alt="go-app-template: kroki CI od PR do podpisanego obrazu"></a></td>
+<td width="45%" valign="top">
+<h3>🧨 <a href="https://github.com/Huge-Commits-Only/go-app-template">go-app-template</a></h3>
+Nowy projekt w minutę. <b>Use this template</b> i masz aplikację w Go z testami, obrazem dla Raspberry Pi i kompletem CI — na zielono od pierwszego commita.
+<br><br>
+🧪 testy i lint · 🔎 CodeQL · 🛡️ Trivy<br>
+🔏 podpisane obrazy (SLSA) · 🤖 Dependabot
+</td>
+</tr>
+</table>
 
 <br>
 
 ## 🧭 Jak tu pracujemy
 
-- **Vibecoding z głową** — AI pisze, człowiek decyduje, review i testy pilnują reszty.
-- **Huge commits only** — każda zmiana to jeden PR, scalany jako jeden squash commit.
-- **Self-hosted** — wszystko działa w homelabie na Raspberry Pi (arm64), bez chmury i kont.
-- **Lekko** — minimum zależności, małe obrazy, kilkanaście MB RAM.
-- **Bezpiecznie** — testy, lint, govulncheck, CodeQL, Trivy, fuzzing i Dependabot w CI; akcje i obrazy przypięte do skrótów, obrazy z podpisaną atestacją pochodzenia, wynik [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Huge-Commits-Only/duet).
+<table>
+<tr>
+<td width="50%" valign="top"><h3>🤖 Vibecoding z głową</h3>AI pisze kod, człowiek decyduje. Review, testy i skany pilnują, żeby do <code>main</code> trafiało tylko to, co działa.</td>
+<td width="50%" valign="top"><h3>🧨 Huge commits only</h3>Jedna zmiana to jeden porządny PR, scalany jako jeden squash commit. Historia czyta się jak lista funkcji.</td>
+</tr>
+<tr>
+<td valign="top"><h3>🏠 Self-hosted</h3>Wszystko działa w homelabie na Raspberry Pi (arm64). Bez chmury, bez kont, dane zostają w domu.</td>
+<td valign="top"><h3>⚡ Lekko</h3>Minimum zależności, obrazy <code>scratch</code> i distroless, kilkanaście–kilkadziesiąt MB RAM.</td>
+</tr>
+</table>
 
 <br>
 
 ## 🛡️ Bezpieczeństwo
 
-Znalazłeś podatność? Nie zakładaj publicznego issue — zgłoś ją prywatnie przez
-**Security → Report a vulnerability** w danym repozytorium. Szczegóły w [SECURITY.md](https://github.com/Huge-Commits-Only/.github/blob/main/SECURITY.md).
+```mermaid
+flowchart LR
+    A["🔀 PR"] --> B["🧪 Testy, fuzzing,<br/>E2E w przeglądarce"]
+    B --> C["🔎 CodeQL · govulncheck<br/>Trivy · gosec"]
+    C --> D["🧨 Podpisany squash<br/>na chronionym main"]
+    D --> E["🔏 Obraz z atestacją<br/>SLSA i SBOM"]
+    E --> F["📊 OpenSSF Scorecard<br/>co tydzień"]
+```
+
+- Akcje GitHub tylko z listy dozwolonych i przypięte do pełnego SHA, obrazy bazowe przypięte do skrótu.
+- Secret scanning z blokadą pushy, Dependabot, prywatne zgłaszanie podatności w każdym repozytorium.
+- Znalazłeś podatność? Nie zakładaj publicznego issue — zgłoś ją prywatnie przez **Security → Report a vulnerability**. Szczegóły w [SECURITY.md](https://github.com/Huge-Commits-Only/.github/blob/main/SECURITY.md).
+
+<br>
+
+<div align="center">
+<img src="assets/logo.svg" alt="" width="56">
+<br>
+<sub>Jeden pomysł · jeden porządny PR · jeden squash na <code>main</code></sub>
+</div>
