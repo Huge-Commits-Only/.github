@@ -1,0 +1,6 @@
+{
+  "name": "CodeQL Verification",
+  "description": "Analiza bezpieczeństwa kodu CodeQL (security-extended) dla Go, JS/TS i workflow — przy PR, merge'u i co tydzień. Darmowa w repo publicznych.",
+  "categories": ["Go", "JavaScript", "TypeScript"],
+  "filePatterns": ["go.mod$", "package.json$"]
+}
