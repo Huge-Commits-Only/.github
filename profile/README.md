@@ -2,7 +2,9 @@
 
 <img src="assets/banner.png" alt="Huge Commits Only — aplikacje budowane z AI" width="100%">
 
-<br><br>
+<br>
+
+**[🌐 huge-commits-only.github.io](https://huge-commits-only.github.io/)**
 
 <img src="https://skillicons.dev/icons?i=go,docker,raspberrypi,githubactions,js,svelte,sqlite,linux&theme=dark" alt="Go, Docker, Raspberry Pi, GitHub Actions, JavaScript, Svelte, SQLite, Linux">
 
