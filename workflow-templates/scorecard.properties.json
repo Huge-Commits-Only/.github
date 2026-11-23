@@ -1,0 +1,5 @@
+{
+  "name": "Scorecard Verification",
+  "description": "OpenSSF Scorecard co tydzień: ocena bezpieczeństwa łańcucha dostaw, wynik w zakładce Security i na scorecard.dev. Tylko repo publiczne.",
+  "categories": ["Go", "JavaScript", "TypeScript", "Dockerfile"]
+}
