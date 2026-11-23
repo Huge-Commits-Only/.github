@@ -1,0 +1,104 @@
+name: Go Verification
+run-name: >-
+  ${{
+      github.event_name == 'pull_request'
+      && format('Go Verification for CI: PR #{0} -> {1}', github.event.number, github.event.pull_request.title)
+      ||
+      github.event_name == 'push'
+      && format('Go Verification for CI: Merge -> {0}', github.event.head_commit.message)
+  }}
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [$default-branch]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  GOLANGCI_LINT_VERSION: v2.15.0
+
+jobs:
+  build:
+    name: Build & Modules
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: 📥 Git -- Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 📘 Go -- Set up
+        uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7.1.0
+        with:
+          go-version-file: "go.mod"
+          cache: true
+
+      - name: 🧪 Go -- Test Module Integrity
+        run: |
+          go mod verify
+          if ! go mod tidy -diff; then
+              echo "❌ go.mod or go.sum are not tidy. Please run 'go mod tidy' and commit the changes."
+              exit 1
+          fi
+          echo "✅ go.mod and go.sum are up to date."
+
+      - name: 🧪 Go -- Test Formatting
+        run: |
+          UNFORMATTED=$(gofmt -l .)
+          if [ -n "$UNFORMATTED" ]; then
+              echo "$UNFORMATTED"
+              echo "❌ The files above are not formatted. Please run 'gofmt -w .' and commit the changes."
+              exit 1
+          fi
+          echo "✅ All Go files are formatted."
+
+      - name: 🧪 Go -- Test Compilation
+        run: go build -v -o /dev/null ./...
+
+  test:
+    name: Go Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 📥 Git -- Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 📘 Go -- Set up
+        uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7.1.0
+        with:
+          go-version-file: "go.mod"
+          cache: true
+
+      - name: 🧪 Go -- Test Vet
+        run: go vet ./...
+
+      - name: 🧪 Go -- Test Units
+        run: go test -race -count=1 ./...
+
+  lint:
+    name: golangci-lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 📥 Git -- Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 📘 Go -- Set up
+        uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7.1.0
+        with:
+          go-version-file: "go.mod"
+          cache: true
+
+      - name: 🧪 Go -- Test Lint
+        uses: golangci/golangci-lint-action@ba0d7d2ec06a0ea1cb5fa41b2e4a3ab91d21278a # v9.3.0
+        with:
+          version: ${{ env.GOLANGCI_LINT_VERSION }}

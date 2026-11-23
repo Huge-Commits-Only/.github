@@ -1,0 +1,6 @@
+{
+  "name": "Security Verification",
+  "description": "govulncheck i Trivy (podatności, sekrety, błędy konfiguracji) przy PR, merge'u i co tydzień.",
+  "categories": ["Go"],
+  "filePatterns": ["go.mod$"]
+}
