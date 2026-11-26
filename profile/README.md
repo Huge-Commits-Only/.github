@@ -21,7 +21,7 @@
 <h3>💞 <a href="https://github.com/Huge-Commits-Only/duet">Duet</a></h3>
 Gry i quizy dla par. Projektor pokazuje grę, telefony są pilotami. Wejście przez kod QR, bez aplikacji i kont.
 <br><br>
-13 trybów · do 4 par · bez chmury<br>
+14 trybów · do 4 par · bez chmury<br>
 Go · obraz <code>scratch</code> · około 25 MB RAM
 <br><br>
 <a href="https://scorecard.dev/viewer/?uri=github.com/Huge-Commits-Only/duet"><img src="https://img.shields.io/ossf-scorecard/github.com/Huge-Commits-Only/duet?style=flat-square&label=OpenSSF%20Scorecard" alt="OpenSSF Scorecard"></a>
